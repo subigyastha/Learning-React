@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef} from 'react'
 import './App.css'
+import { Navbar } from './components/Navbar';
 
 function App() {
   const [length,setlength]=useState(8);
@@ -29,6 +30,8 @@ const copyPasswordToClipboard= useCallback(()=>{
 
 useEffect(()=>{passwordGenerator()},[length,passwordGenerator,numberAllowed,specialAllowed])
   return (
+    <>
+    <Navbar />
     <div className='flex-col mt-28 max-w-2xl mx-auto'>
       <div className='bg-blue-600  p-2 rounded-t-2xl mx-auto'><h1 className="text-3xl font-bold text-center">
       Password Generator
@@ -55,6 +58,7 @@ useEffect(()=>{passwordGenerator()},[length,passwordGenerator,numberAllowed,spec
       </div>
     </div>
     </div>
+    </>
   )
 }
 
